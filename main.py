@@ -33,8 +33,6 @@ def main():
         sheets = service.spreadsheets()
 
         input1 = str(input("Enter the row you want to edit: "))
-        # TODO: Take row number from input1 and join it with the list values
-        # TODO: Create for loop that will iterate through the list and update each cell in the row
         for x in LIST:
             sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Main!" + x + input1,
                                    valueInputOption="USER_ENTERED", body={"values": [["TRUE"]]}).execute()
